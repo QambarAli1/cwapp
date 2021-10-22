@@ -2,10 +2,29 @@ import { useFormik } from "formik";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import * as Yup from 'yup';
 
 // const dev = "http://localhost:5000"
 // const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, 'Too Short Name!')
+    .max(30, 'Too Long Name!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  number: Yup.string()
+    .required("required")
+    .matches(phoneRegExp, 'Phone number is not valid')
+    .min(11, "to short")
+    .max(11, "to long"),
+  password: Yup.string()
+    .min(8, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+
+});
 
 function Signup() {
 
@@ -13,14 +32,16 @@ function Signup() {
     initialValues: {
       name: '',
       email: '',
-      address: '',
+      number: '',
+      password: '',
     },
-    onSubmit: onSubmitFunction
+    validationSchema: SignupSchema,
+    onSubmit: onSubmitFunction,
   });
 
   function onSubmitFunction(values) {
     console.log("values: ", values)
-    
+
   }
 
 
@@ -42,8 +63,8 @@ function Signup() {
             value={formik.values.name}
             onChange={formik.handleChange}
 
-            error={formik.touched.website && Boolean(formik.errors.website)}
-            helperText={formik.touched.website && formik.errors.website}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
           />
 
           <TextField
@@ -70,7 +91,7 @@ function Signup() {
             label="Number"
             variant="outlined"
 
-            name="Number"
+            name="number"
             value={formik.values.address}
             onChange={formik.handleChange}
 
@@ -84,6 +105,7 @@ function Signup() {
             id="filled-basic"
             label="Password"
             variant="outlined"
+            type='password'
 
             name="password"
             value={formik.values.address}

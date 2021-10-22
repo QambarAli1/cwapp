@@ -2,26 +2,34 @@ import { useFormik } from "formik";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import * as Yup from 'yup';
 
 // const dev = "http://localhost:5000"
 // const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
 
+const LoginSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Required'),
+    password: Yup.string()
+      .min(6, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+  });
 
 function Signup() {
-
-    const formik = useFormik({
-        initialValues: {
-            name: '',
-            email: '',
-            address: '',
-        },
-        onSubmit: onSubmitFunction
-    });
 
     function onSubmitFunction(values) {
         console.log("values: ", values)
 
     }
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            password: '',
+        },
+        validationSchema:LoginSchema,
+        onSubmit: onSubmitFunction,
+    });
 
 
     return (
@@ -53,6 +61,7 @@ function Signup() {
                         id="outlined-basic"
                         label="Password"
                         variant="outlined"
+                        type='password'
 
                         name="password"
                         value={formik.values.password}
