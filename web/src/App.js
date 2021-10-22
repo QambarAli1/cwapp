@@ -7,15 +7,9 @@ import {
   NavLink
 } from "react-router-dom";
 
-// import { SearchAppBar } from "./components/surfaces/appBar"
-import Home from './components/home';
-import Contact from './components/contact';
-import Laptops from './components/laptops';
-import Mobiles from './components/mobiles';
-import Accessories from './components/accessories';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Login from './components/login';
+import Signup from './components/signup';
+import Dashboard from './components/dashboard';
 
 export default function App() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,49 +26,19 @@ export default function App() {
         <nav>
           <ul>
             <li className='logocompany' >
-              SamanChahiye.pk
+              CWapp
             </li>
             <br />
             <li>
-              <NavLink to="/" activeStyle={{ color: 'green' }}>Home</NavLink>
+              <NavLink to="/login" activeStyle={{ color: 'green' }}>Login</NavLink>
             </li>
             <li>
-
-              <Button
-                id="basic-button"
-                aria-controls="basic-menu"
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                {/* <NavLink to="/products" activeStyle={{ color: 'green' }}>Products</NavLink> */}
-                products
-              </Button>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-              >
-
-                <NavLink to="/laptops" activeStyle={{ color: 'green' }}>
-                  <MenuItem onClick={handleClose}>Laptops</MenuItem>
-                </NavLink>
-                <NavLink to="/mobiles" activeStyle={{ color: 'green' }}>
-                  <MenuItem onClick={handleClose}>Mobiles</MenuItem>
-                </NavLink>
-                <NavLink to="/accessories" activeStyle={{ color: 'green' }}>
-                  <MenuItem onClick={handleClose}>Accessories</MenuItem>
-                </NavLink>
-              </Menu>
+              <NavLink to="/signup" activeStyle={{ color: 'green' }}>Sign Up</NavLink>
             </li>
-
             <li>
-              <NavLink to="/contact" activeStyle={{ color: 'green' }}>Contact</NavLink>
+              <NavLink to="/dashboard" activeStyle={{ color: 'green' }}>Dashboard</NavLink>
             </li>
+
 
           </ul>
         </nav>
@@ -83,20 +47,14 @@ export default function App() {
           {/* <Route path="/product">
             <Product />
           </Route> */}
-          <Route path="/contact">
-            <Contact />
+          <Route path="/login">
+            <Login />
           </Route>
-          <Route path="/laptops">
-            <Laptops />
+          <Route path="/signup">
+            <Signup />
           </Route>
-          <Route path="/mobiles">
-            <Mobiles />
-          </Route>
-          <Route path="/accessories">
-            <Accessories />
-          </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
       </div>
