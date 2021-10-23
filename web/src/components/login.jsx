@@ -35,7 +35,7 @@ function Signup() {
     return (
         <div className='form-user'>
 
-            <div>
+            <div className='login-form'>
             <h1>LOGIN</h1>
             <form onSubmit={formik.handleSubmit}>
                 <Stack spacing={2}>
@@ -71,7 +71,8 @@ function Signup() {
                         helperText={formik.touched.password && formik.errors.password}
                     />
 
-                    <Button fullWidth variant="contained" color="primary" type="submit">Login</Button>
+                    <Button size='medium' variant="contained" color="primary" type="submit">Login</Button>
+                    <Button size='medium' variant="text" color="success" sx={{fontWeight:'bold'}} >Create New Account</Button>
                 </Stack>
             </form>
             </div>

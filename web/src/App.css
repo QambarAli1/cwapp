@@ -28,16 +28,37 @@ nav ul li a:hover{
   font-size: 25px;
 }
 .form-user{
-  width: 30%;
+  width: 20%;
   margin: 30px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* border: 2px solid black; */
+  padding: 10px;
+  border-radius: 20px 20px;
+  /* box-shadow: 10px 10px 5px rgb(153, 149, 149);  */
+  -webkit-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
+  -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
+  box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
 }
+.login-form , .signup-form{
+  padding: 10px;
+}
+@media only screen and (max-width: 800px) {
+  .form-user{
+    width: 50%;
+    margin: 30px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .form-user{
-    width: 80%;
+    width: 70%;
+    margin: 30px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .form-user{
+    width: 25%;
     margin: 30px;
   }
 }

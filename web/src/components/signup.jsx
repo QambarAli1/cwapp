@@ -47,79 +47,80 @@ function Signup() {
 
   return (
     <div className='form-user'>
+      <div className='signup-form'>
+        <h1>SIGN UP</h1>
+        <form onSubmit={formik.handleSubmit}>
+          <Stack spacing={2}>
+            <TextField
+              fullWidth
+              size="small"
+              color="primary"
+              id="outlined-basic"
+              label="Name"
+              variant="outlined"
 
-      <h1>SIGN UP</h1>
-      <form onSubmit={formik.handleSubmit}>
-        <Stack spacing={2}>
-          <TextField
-            fullWidth
-            size="small"
-            color="primary"
-            id="outlined-basic"
-            label="Name"
-            variant="outlined"
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
 
-            name="name"
-            value={formik.values.name}
-            onChange={formik.handleChange}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name && formik.errors.name}
+            />
 
-            error={formik.touched.name && Boolean(formik.errors.name)}
-            helperText={formik.touched.name && formik.errors.name}
-          />
+            <TextField
+              fullWidth
+              size="small"
+              color="primary"
+              id="outlined-basic"
+              label="Email"
+              variant="outlined"
 
-          <TextField
-            fullWidth
-            size="small"
-            color="primary"
-            id="outlined-basic"
-            label="Email"
-            variant="outlined"
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
 
-            name="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
+            />
 
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email && formik.errors.email}
-          />
+            <TextField
+              fullWidth
+              size="small"
+              color="primary"
+              id="filled-basic"
+              label="Number"
+              variant="outlined"
 
-          <TextField
-            fullWidth
-            size="small"
-            color="primary"
-            id="filled-basic"
-            label="Number"
-            variant="outlined"
+              name="number"
+              value={formik.values.address}
+              onChange={formik.handleChange}
 
-            name="number"
-            value={formik.values.address}
-            onChange={formik.handleChange}
+              error={formik.touched.number && Boolean(formik.errors.number)}
+              helperText={formik.touched.number && formik.errors.number}
+            />
+            <TextField
+              fullWidth
+              size="small"
+              color="primary"
+              id="filled-basic"
+              label="Password"
+              variant="outlined"
+              type='password'
 
-            error={formik.touched.number && Boolean(formik.errors.number)}
-            helperText={formik.touched.number && formik.errors.number}
-          />
-          <TextField
-            fullWidth
-            size="small"
-            color="primary"
-            id="filled-basic"
-            label="Password"
-            variant="outlined"
-            type='password'
+              name="password"
+              value={formik.values.address}
+              onChange={formik.handleChange}
 
-            name="password"
-            value={formik.values.address}
-            onChange={formik.handleChange}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              helperText={formik.touched.password && formik.errors.password}
+            />
 
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            helperText={formik.touched.password && formik.errors.password}
-          />
+            <Button fullWidth variant="contained" color="primary" type="submit">Sign Up</Button>
+            <Button size='medium' variant="text" color="success" sx={{fontWeight:'bold'}} >Login</Button>
 
-          <Button fullWidth variant="contained" color="primary" type="submit">Sign Up</Button>
-        </Stack>
-      </form>
-
-
+          </Stack>
+        </form>
+      </div>
     </div>
   );
 }
