@@ -39,10 +39,10 @@ function Signup() {
     onSubmit: onSubmitFunction,
   });
 
-  function onSubmitFunction(values) {
+  function onSubmitFunction(values, { resetForm }) {
     console.log("values: ", values)
-
-  }
+    resetForm({ values: '' })
+}
 
 
   return (
@@ -92,7 +92,7 @@ function Signup() {
               variant="outlined"
 
               name="number"
-              value={formik.values.address}
+              value={formik.values.number}
               onChange={formik.handleChange}
 
               error={formik.touched.number && Boolean(formik.errors.number)}
@@ -108,7 +108,7 @@ function Signup() {
               type='password'
 
               name="password"
-              value={formik.values.address}
+              value={formik.values.password}
               onChange={formik.handleChange}
 
               error={formik.touched.password && Boolean(formik.errors.password)}

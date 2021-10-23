@@ -10,21 +10,21 @@ import * as Yup from 'yup';
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string()
-      .min(6, 'Too Short!')
+      .min(8, 'Too Short!')
       .max(50, 'Too Long!')
       .required('Required'),
   });
 
-function Signup() {
+function Login() {
 
-    function onSubmitFunction(values) {
+    function onSubmitFunction(values, { resetForm }) {
         console.log("values: ", values)
-
+        resetForm({ values: '' })
     }
 
     const formik = useFormik({
         initialValues: {
-            name: '',
+            email: '',
             password: '',
         },
         validationSchema:LoginSchema,
@@ -82,4 +82,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default Login;
