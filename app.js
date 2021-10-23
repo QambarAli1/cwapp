@@ -25,7 +25,7 @@ app.get('/add',(request,response)=>{
 
 app.get('/find',(request,response)=>{
     postModel.findOne(
-        {email:"qambar@gmail.com"},
+        {email:"ali@gmail.com"},
         (error,data)=>{
             if(error){
                 console.log(error.message);
