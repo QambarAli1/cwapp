@@ -42,6 +42,11 @@ nav ul li a:hover{
 .login-form , .signup-form{
   padding: 10px;
 }
+
+.dashboard{
+  padding: 20px;
+}
+
 @media only screen and (max-width: 800px) {
   .form-user{
     width: 50%;
