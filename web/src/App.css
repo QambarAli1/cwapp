@@ -27,20 +27,28 @@ nav ul li a:hover{
   font-weight: bold;
   font-size: 25px;
 }
-.form-user{
-  width: 20%;
-  margin: 30px;
+
+.post-user , .form-user{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+}
+
+.login-form , .signup-form {
+  margin-left: 20px;
+  width: 300px !important;
   text-align: center;
-  /* border: 2px solid black; */
   padding: 10px;
   border-radius: 20px 20px;
-  /* box-shadow: 10px 10px 5px rgb(153, 149, 149);  */
   -webkit-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
   -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
   box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
 }
-.login-form , .signup-form{
+.post-form{
+  width: 320px;
+  text-align: center;
   padding: 10px;
+  border-radius: 20px 20px;
 }
 
 .dashboard{
@@ -67,3 +75,8 @@ nav ul li a:hover{
     margin: 30px;
   }
 }
+
+
+
+/* Dashboard css starts here */
+

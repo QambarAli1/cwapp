@@ -11,6 +11,7 @@ import Login from './components/login';
 import Signup from './components/signup';
 import Dashboard from './components/dashboard';
 import Navdashboard from './components/navdashboard'
+import CreatePost from './components/createpost'
 
 export default function App() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -56,7 +57,8 @@ export default function App() {
           </Route>
           <Route path="/dashboard">
             <Navdashboard />
-            <Dashboard />
+            {/* <Dashboard /> */}
+            <CreatePost />
           </Route>
         </Switch>
       </div>

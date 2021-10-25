@@ -2,7 +2,7 @@ function Dashboard() {
   return(
       <div className='dashboard' >
           <h1>
-              Dashboard
+              Welcome to CWapp
               {/* <PrimarySearchAppBar /> */}
           </h1>
       </div>
