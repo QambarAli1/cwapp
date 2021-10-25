@@ -10,6 +10,7 @@ import {
 import Login from './components/login';
 import Signup from './components/signup';
 import Dashboard from './components/dashboard';
+import Navdashboard from './components/navdashboard'
 
 export default function App() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -54,6 +55,7 @@ export default function App() {
             <Signup />
           </Route>
           <Route path="/dashboard">
+            <Navdashboard />
             <Dashboard />
           </Route>
         </Switch>
