@@ -1,8 +1,6 @@
 nav ul li{
   list-style-type: none;
   display: inline-block;
-  /* padding: 5px; */
-  /* border: 1px solid gray; */
   margin-left: 40px;
   margin-top: 10px;
 }
@@ -27,15 +25,12 @@ nav ul li a:hover{
   font-weight: bold;
   font-size: 25px;
 }
-
 .post-user , .form-user{
   width: 95% !important;
   display: flex !important;
   flex-direction: row !important;
   justify-content: center !important;
-  /* margin-left: 300px !important; */
 }
-
 .login-form , .signup-form{
   width: 280px;
   margin-left: 20px;
@@ -54,7 +49,6 @@ nav ul li a:hover{
 }
 .post-user{
   width: 95%;
-  /* margin-left: 20px; */
   margin:10px;
   text-align: center;
   padding: 10px;
@@ -63,33 +57,24 @@ nav ul li a:hover{
   -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
   box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
 }
-
 .dashboard{
   padding: 20px;
 }
-
 @media only screen and (max-width: 800px) {
   .form-user{
     width: 50%;
     margin: 30px;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .form-user{
     width: 70%;
     margin: 30px;
   }
 }
-
 @media only screen and (min-width: 800px) {
   .form-user{
     width: 25%;
     margin: 30px;
   }
 }
-
-
-
-/* Dashboard css starts here */
-
