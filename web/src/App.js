@@ -46,15 +46,12 @@ export default function App() {
         </nav>
         <Switch>
 
-          {/* <Route path="/product">
-            <Product />
-          </Route> */}
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/signup">
+              <Signup />
+            </Route>
           <Route path="/dashboard">
             <Navdashboard />
             {/* <Dashboard /> */}
