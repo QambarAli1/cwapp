@@ -46,6 +46,9 @@ nav ul li a:hover{
   text-align: center;
   padding: 10px;
   border-radius: 20px 20px;
+  -webkit-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
+  -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
+  box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
 }
 .post-user{
   width: 95%;
@@ -53,9 +56,9 @@ nav ul li a:hover{
   text-align: center;
   padding: 10px;
   border-radius: 20px 20px;
-  -webkit-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
+  /* -webkit-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
   -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
-  box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
+  box-shadow: 0 0 10px 3px rgb(59, 56, 56);  */
 }
 .dashboard{
   padding: 20px;

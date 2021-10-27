@@ -8,26 +8,32 @@ import * as Yup from 'yup';
 // const dev = "http://localhost:5000"
 // const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
 
-const PostSchema = Yup.object().shape({
-    post: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
+// const PostSchema = Yup.object().shape({
+//     post: Yup.string()
+//       .min(2, 'Too Short!')
+//       .max(50, 'Too Long!')
+//       .required('Required'),
 
-});
+// });
 
 function CreatePost() {
 
     function onSubmitFunction(values, { resetForm }) {
-        console.log("values: ", values)
-        resetForm({ values: '' })
+        if(values.post.length<2){
+            console.log('Write something to post')
+            alert("Write something to post")
+        }
+        else{
+            console.log("values: ", values)
+            resetForm({ values: '' })
+        }
     }
 
     const formik = useFormik({
         initialValues: {
             post: '',
         },
-        validationSchema: PostSchema,
+        // validationSchema: PostSchema,
         onSubmit: onSubmitFunction,
     });
 
@@ -56,6 +62,7 @@ function CreatePost() {
                         <Button size='medium' variant="contained" color="primary" type="submit">Post</Button>
                     </Stack>
                 </form>
+                <h2> {values.post} </h2>
             </div>
 
 
