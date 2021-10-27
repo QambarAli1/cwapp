@@ -42,7 +42,7 @@ nav ul li a:hover{
   box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
 }
 .post-form{
-  width: 320px;
+  width: 90%;
   text-align: center;
   padding: 10px;
   border-radius: 20px 20px;
@@ -56,13 +56,19 @@ nav ul li a:hover{
   text-align: center;
   padding: 10px;
   border-radius: 20px 20px;
-  /* -webkit-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
-  -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
-  box-shadow: 0 0 10px 3px rgb(59, 56, 56);  */
 }
 .dashboard{
   padding: 20px;
 }
+.TextareaAutosize{
+  width: 97%;
+}
+.post-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 800px) {
   .form-user{
     width: 50%;
@@ -79,5 +85,8 @@ nav ul li a:hover{
   .form-user{
     width: 25%;
     margin: 30px;
+  }
+  .post-form{
+    width: 320px;
   }
 }

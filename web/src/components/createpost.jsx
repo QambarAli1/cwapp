@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import TextareaAutosize from '@mui/material/TextareaAutosize'
 import * as Yup from 'yup';
+import { textAlign } from "@mui/system";
 
 // const dev = "http://localhost:5000"
 // const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
@@ -19,11 +20,11 @@ import * as Yup from 'yup';
 function CreatePost() {
 
     function onSubmitFunction(values, { resetForm }) {
-        if(values.post.length<2){
+        if (values.post.length < 2) {
             console.log('Write something to post')
             alert("Write something to post")
         }
-        else{
+        else {
             console.log("values: ", values)
             resetForm({ values: '' })
         }
@@ -47,11 +48,11 @@ function CreatePost() {
                     <Stack spacing={2}>
 
                         <TextareaAutosize
+                            className='TextareaAutosize'
                             aria-label="minimum height"
                             minRows={6}
                             placeholder="What's on your mind ..."
-                            style={{ width: 300 , padding:8 }}
-        
+
                             name="post"
                             value={formik.values.post}
                             onChange={formik.handleChange}
@@ -59,10 +60,14 @@ function CreatePost() {
                             error={formik.touched.post && Boolean(formik.errors.post)}
                             helperText={formik.touched.post && formik.errors.post}
                         />
-                        <Button size='medium' variant="contained" color="primary" type="submit">Post</Button>
+                        <div className='post-btn'>
+                            <Button sx={{
+                                width: 90,
+                                textAlign: 'center'
+                            }} size='medium' variant="contained" color="primary" type="submit">Post</Button>
+                        </div>
                     </Stack>
                 </form>
-                <h2> {values.post} </h2>
             </div>
 
 
