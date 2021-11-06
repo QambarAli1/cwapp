@@ -1,13 +1,15 @@
+import axios from 'axios';
 import { useFormik } from "formik";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 
-// const dev = "http://localhost:5000"
-// const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+const dev = "http://localhost:5000"
+const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
 
+
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Too Short Name!')
@@ -26,8 +28,8 @@ const SignupSchema = Yup.object().shape({
 
 });
 
-function Signup() {
 
+function Signup() {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -40,9 +42,18 @@ function Signup() {
   });
 
   function onSubmitFunction(values, { resetForm }) {
+    axios.post(`${baseUrl}/api/v1/profile`, {
+      name: values.name,
+      email: values.email,
+      address: values.address
+    })
+      .then(res => {
+        console.log(res.data);
+        setToggleGetUser(!toggleGetUser)
+      });
     console.log("values: ", values)
     resetForm({ values: '' })
-}
+  }
 
 
   return (
@@ -116,7 +127,7 @@ function Signup() {
             />
 
             <Button fullWidth variant="contained" color="primary" type="submit">Sign Up</Button>
-            <Button size='medium' variant="text" color="success" sx={{fontWeight:'bold'}} >Login</Button>
+            <Button size='medium' variant="text" color="success" sx={{ fontWeight: 'bold' }} >Login</Button>
 
           </Stack>
         </form>
