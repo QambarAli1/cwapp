@@ -12,6 +12,7 @@ import Signup from './components/signup';
 import Dashboard from './components/dashboard';
 import Navdashboard from './components/navdashboard'
 import CreatePost from './components/createpost'
+import Posts from './components/posts'
 
 export default function App() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,7 +33,7 @@ export default function App() {
             </li>
             <br />
             <li>
-              <NavLink to="/login" activeStyle={{ color: 'green' }}>Login</NavLink>
+              <NavLink to="/" activeStyle={{ color: 'green' }}>Login</NavLink>
             </li>
             <li>
               <NavLink to="/signup" activeStyle={{ color: 'green' }}>Sign Up</NavLink>
@@ -40,26 +41,23 @@ export default function App() {
             <li>
               <NavLink to="/dashboard" activeStyle={{ color: 'green' }}>Dashboard</NavLink>
             </li>
-
-
           </ul>
         </nav>
         <Switch>
-
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/signup">
-              <Signup />
-            </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
           <Route path="/dashboard">
             <Navdashboard />
             {/* <Dashboard /> */}
             <CreatePost />
+            <Posts />
+          </Route>
+          <Route path="/">
+            <Login />
           </Route>
         </Switch>
       </div>
-
     </Router >
   );
 }

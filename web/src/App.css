@@ -25,11 +25,11 @@ nav ul li a:hover{
   font-weight: bold;
   font-size: 25px;
 }
-.post-user , .form-user{
-  width: 95% !important;
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: center !important;
+.form-user{
+  display: flex ;
+  flex-direction: row ;
+  justify-content: center ;
+
 }
 .login-form , .signup-form{
   width: 280px;
@@ -41,8 +41,19 @@ nav ul li a:hover{
   -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
   box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
 }
-.post-form{
+.post-user{
   width: 90%;
+  /* width: 300px; */
+  margin:10px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px 20px;
+  display: flex ;
+  flex-direction: row ;
+  justify-content: center ;
+}
+.post-form{
+  width: 25%;
   text-align: center;
   padding: 10px;
   border-radius: 20px 20px;
@@ -50,43 +61,33 @@ nav ul li a:hover{
   -moz-box-shadow: 0 0 10px 3px rgb(59, 56, 56);
   box-shadow: 0 0 10px 3px rgb(59, 56, 56); 
 }
-.post-user{
-  width: 95%;
-  margin:10px;
-  text-align: center;
-  padding: 10px;
-  border-radius: 20px 20px;
-}
 .dashboard{
   padding: 20px;
 }
 .TextareaAutosize{
-  width: 97%;
+  width: 95%;
 }
 .post-btn{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  width: 300px;
 }
 
 @media only screen and (max-width: 800px) {
   .form-user{
-    width: 50%;
-    margin: 30px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .form-user{
-    width: 70%;
-    margin: 30px;
-  }
-}
-@media only screen and (min-width: 800px) {
-  .form-user{
-    width: 25%;
+    width: 100%;
     margin: 30px;
   }
   .post-form{
-    width: 320px;
+    width: 90%;
   }
+  .post-form h1{
+    font-size: 20px;
+  }
+  .TextareaAutosize{
+    width: 90%;
+    margin-left: 10px;
+  }
+}
+
+.posts{
+  text-align: center;
 }

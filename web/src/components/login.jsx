@@ -43,7 +43,7 @@ function Login() {
                             size="small"
                             color="primary"
                             id="outlined-basic"
-                            label="email"
+                            label="Email"
                             variant="outlined"
 
                             name="email"

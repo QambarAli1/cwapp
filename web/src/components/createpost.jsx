@@ -6,16 +6,6 @@ import TextareaAutosize from '@mui/material/TextareaAutosize'
 import * as Yup from 'yup';
 import { textAlign } from "@mui/system";
 
-// const dev = "http://localhost:5000"
-// const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
-
-// const PostSchema = Yup.object().shape({
-//     post: Yup.string()
-//       .min(2, 'Too Short!')
-//       .max(50, 'Too Long!')
-//       .required('Required'),
-
-// });
 
 function CreatePost() {
 
@@ -41,7 +31,6 @@ function CreatePost() {
 
     return (
         <div className='post-user'>
-
             <div className='post-form'>
                 <h1>CREATE POST HERE</h1>
                 <form onSubmit={formik.handleSubmit}>
@@ -68,10 +57,10 @@ function CreatePost() {
                         </div>
                     </Stack>
                 </form>
+                
             </div>
-
-
         </div>
+        
     );
 }
 
