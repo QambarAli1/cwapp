@@ -1,3 +1,4 @@
+import Postcard from './card'
 function Posts() {
     return(
         <div className='posts' >
@@ -5,6 +6,8 @@ function Posts() {
             <h1>
                 POSTS
             </h1>
+            <br />
+            <Postcard />
         </div>
     )
   }

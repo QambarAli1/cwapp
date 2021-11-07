@@ -49,7 +49,6 @@ function Signup() {
     })
       .then(res => {
         console.log(res.data);
-        setToggleGetUser(!toggleGetUser)
       });
     console.log("values: ", values)
     resetForm({ values: '' })
