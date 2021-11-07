@@ -1,11 +1,12 @@
+import axios from 'axios';
 import { useFormik } from "formik";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import * as Yup from 'yup';
 
-// const dev = "http://localhost:5000"
-// const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
+const dev = "http://localhost:5000"
+const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -19,7 +20,16 @@ function Login() {
 
     function onSubmitFunction(values, { resetForm }) {
         console.log("values: ", values)
+        axios.post(`${baseUrl}/api/v1/login`, {
+            email: values.email,
+            password: values.password,
+        })
+            .then((res) => {
+                console.log("res: ", res.data);
+                console.log('User found');
+            })
         resetForm({ values: '' })
+
     }
 
     const formik = useFormik({

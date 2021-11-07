@@ -45,7 +45,8 @@ function Signup() {
     axios.post(`${baseUrl}/api/v1/profile`, {
       name: values.name,
       email: values.email,
-      address: values.address
+      number: values.number,
+      password: values.password
     })
       .then(res => {
         console.log(res.data);
