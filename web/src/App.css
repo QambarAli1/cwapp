@@ -90,4 +90,11 @@ nav ul li a:hover{
 
 .posts{
   text-align: center;
+  margin: 0px 20px;
+  padding: 50px
+}
+.allPosts{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

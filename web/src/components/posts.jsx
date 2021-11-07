@@ -1,14 +1,19 @@
 import Postcard from './card'
 function Posts() {
-    return(
+    return (
         <div className='posts' >
             <hr />
             <h1>
                 POSTS
             </h1>
             <br />
-            <Postcard />
+            <div className="allPosts">
+                <Postcard />
+                <Postcard />
+                <Postcard />
+            </div>
+
         </div>
     )
-  }
-  export default Posts;
+}
+export default Posts;
