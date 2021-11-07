@@ -18,28 +18,22 @@ mongoose.connect(db_uri,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-app.get('/add',(request,response)=>{
-    postModel.create(
-        {name:"Qambar Ali",email:"qambar@gmail.com",password:"qambar12",number:'03123456789'},
-        (error,data)=>{
-            if(error){
-                console.log(error.message);
-            }
-            else{
-                console.log(data);
-                response.send(`Data Added Successfully`)
-            }
-        })
-})
+// app.get('/add',(request,response)=>{
+//     postModel.create(
+//         {name:"Qambar Ali",email:"qambar@gmail.com",password:"qambar12",number:'03123456789'},
+//         (error,data)=>{
+//             if(error){
+//                 console.log(error.message);
+//             }
+//             else{
+//                 console.log(data);
+//                 response.send(`Data Added Successfully`)
+//             }
+//         })
+// })
 app.post('/api/v1/profile', (req, res) => {
 
-    console.log(res.body)
-
-    users.push({
-        name: req.body.name,
-        email: req.body.email,
-        address: req.body.address
-    })
+    console.log(req.body)
 
     res.send('profile created')
 
