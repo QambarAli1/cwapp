@@ -4,7 +4,7 @@ function Posts() {
         <div className='posts' >
             <hr />
             <h1>
-                POSTS
+                Buy on 20% Discount
             </h1>
             <br />
             <div className="allPosts">

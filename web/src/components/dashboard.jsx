@@ -2,7 +2,7 @@ function Dashboard() {
   return(
       <div className='dashboard' >
           <h1>
-              Welcome to CWapp
+              Welcome to SamanChahiye.pk
               {/* <PrimarySearchAppBar /> */}
           </h1>
       </div>

@@ -4,10 +4,8 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import * as Yup from 'yup';
-
 const dev = "http://localhost:5000"
 const baseUrl = window.location.hostname.split(":")[0] === "localhost" ? dev : "";
-
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string()
@@ -15,9 +13,7 @@ const LoginSchema = Yup.object().shape({
         .max(50, 'Too Long!')
         .required('Required'),
 });
-
 function Login() {
-
     function onSubmitFunction(values, { resetForm }) {
         console.log("values: ", values)
         axios.post(`${baseUrl}/api/v1/login`, {
@@ -29,7 +25,6 @@ function Login() {
                 console.log('User found');
             })
         resetForm({ values: '' })
-
     }
 
     const formik = useFormik({
@@ -59,7 +54,6 @@ function Login() {
                             name="email"
                             value={formik.values.email}
                             onChange={formik.handleChange}
-
                             error={formik.touched.email && Boolean(formik.errors.email)}
                             helperText={formik.touched.email && formik.errors.email}
                         />
@@ -90,5 +84,4 @@ function Login() {
         </div>
     );
 }
-
 export default Login;
