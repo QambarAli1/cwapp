@@ -29,7 +29,7 @@ export default function App() {
         <nav>
           <ul>
             <li className='logocompany' >
-              CWapp
+              SamanChaiye.pk
             </li>
             <br />
             <li>

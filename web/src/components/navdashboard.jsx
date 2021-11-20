@@ -173,7 +173,7 @@ export default function Navdashboard() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            CWapp
+            SamanChaiye
           </Typography>
           <Search>
             <SearchIconWrapper>
